@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, EZTVActivity!</string>
+    <string name="hello">EZTV App. (under early development...)</string>
     <string name="app_name">EZTV</string>
     <string name="showlist">Show List</string>
     <string name="title_showlist">EZTV - Show List</string>
@@ -9,5 +9,13 @@
     <string name="refresh">Refresh</string>
     <string name="sort_name">Sort by Name</string>
     <string name="sort_status">Sort by Status</string>
+    <string name="login">Login</string>
+    <string name="username_hint">Your username at eztv.it</string>
+    <string name="password_hint">Your password at eztv.it</string>
+    <string name="title_login">EZTV - Login</string>
+    <string name="signin">Sign in</string>
+    <string name="about">About</string>
+    <string name="signout">Sign out</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
