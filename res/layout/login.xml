@@ -35,14 +35,19 @@
             android:layout_alignRight="@+id/password"
             android:layout_below="@+id/password"
             android:text="@string/login" />
-
-        <Button
-            android:id="@+id/button_cancel"
+        
+        <TextView
+            android:id="@+id/error" 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/button_login"
-            android:layout_toLeftOf="@+id/button_login"
-            android:text="@string/cancel" />
+			android:layout_alignBaseline="@+id/button_login"
+            android:layout_alignLeft="@+id/password"
+            android:text="@string/failed"
+            android:textSize="10pt"
+            android:textColor="@color/error"
+            android:visibility="invisible"
+            />
+        
     </RelativeLayout>
 
 </RelativeLayout>

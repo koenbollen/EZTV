@@ -41,6 +41,8 @@ public abstract class BaseScraper<T> extends AsyncTask<String, Void, List<T>> {
 		String username = ps.getString("username", null);
 		String password = ps.getString("password", null);
 		
+		Log.d( "EZTV", "creds: "+username +"/"+password );
+		
 		for( String url : urls )
 		{
 

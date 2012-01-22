@@ -1,5 +1,9 @@
 package it.koen.eztv.data;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -20,11 +24,15 @@ public class Show implements Parcelable
 	public final String title;
 	public final String status;
 	
+	private List<Episode> episodes;
+	
 	public Show( String url, String title, String status )
 	{
 		this.url = url;
 		this.title = title;
 		this.status = status;
+		
+		this.episodes = new LinkedList<Episode>();
 	}
 	
 	protected Show( Parcel in )
@@ -32,12 +40,13 @@ public class Show implements Parcelable
 		this.url = in.readString();
 		this.title = in.readString();
 		this.status = in.readString();
+
+		this.episodes = new LinkedList<Episode>();
 	}
 
 	@Override
 	public String toString() {
-		return "Show [url=" + this.url + ", title=" + this.title + ", status="
-				+ this.status + "]";
+		return this.title + " (" + this.status + ")";
 	}
 
 	@Override
@@ -52,5 +61,15 @@ public class Show implements Parcelable
 		dest.writeString( this.url );
 		dest.writeString( this.title );
 		dest.writeString( this.status );
+	}
+
+	public void addEpisode( Episode e )
+	{
+		this.episodes.add( e );
+	}
+
+	public List<Episode> getEpisodes()
+	{
+		return Collections.unmodifiableList( this.episodes );
 	}
 }

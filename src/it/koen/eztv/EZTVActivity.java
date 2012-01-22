@@ -12,13 +12,13 @@ import android.widget.Toast;
 
 public class EZTVActivity extends Activity {
 
-	private boolean signedin = false;
+	protected boolean signedin = false;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+		
 		SharedPreferences ps = this.getSharedPreferences("it.koen.eztv", Context.MODE_PRIVATE);
 		String username = ps.getString("username", null);
 		String password = ps.getString("password", null);
@@ -27,11 +27,18 @@ public class EZTVActivity extends Activity {
 		{
 			this.signedin = true;
 		}
-        
+
         findViewById(R.id.button_showlist).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(EZTVActivity.this, ShowListActivity.class));
+			}
+		});
+        findViewById(R.id.button_mypage).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if( EZTVActivity.this.signedin )
+					startActivity(new Intent(EZTVActivity.this, MyPageActivity.class));
 			}
 		});
     }
@@ -52,13 +59,14 @@ public class EZTVActivity extends Activity {
 			menu.findItem( R.id.sign ).setTitle( R.string.signin );
 		return super.onPrepareOptionsMenu( menu );
 	}
+	
 	@Override
 	public boolean onOptionsItemSelected( MenuItem item )
 	{
 		switch( item.getItemId() )
 		{
 			case R.id.about:
-				Toast.makeText( this, "not yet implemented", Toast.LENGTH_SHORT );
+				Toast.makeText( this, "not yet implemented", Toast.LENGTH_SHORT ).show();
 				return true;
 			case R.id.sign:
 				if( this.signedin )

@@ -23,6 +23,8 @@
             android:name=".ShowListActivity"></activity>
         <activity android:label="@string/title_login"
             android:name=".LoginActivity"></activity>
+        <activity android:label="@string/title_mypage"
+            android:name=".MyPageActivity"></activity>
     </application>
 
 </manifest>

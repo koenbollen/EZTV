@@ -69,7 +69,7 @@ public class ShowListActivity extends Activity
 		ShowListActivity.this.list.setVisibility( View.INVISIBLE );
 		ShowListActivity.this.findViewById( R.id.showlist_status ).setVisibility( View.VISIBLE );
 		setProgressBarIndeterminateVisibility( true );
-		s.execute( "http://eztv.it/showlist/" );
+		s.execute( ShowList.URL );
 	}
 
 	protected void fillList()
@@ -100,7 +100,7 @@ public class ShowListActivity extends Activity
 				this.fetchShowList();
 				return true;
 			case R.id.showlist_sort:
-				Toast.makeText( this, "not yet implemented", Toast.LENGTH_SHORT );
+				Toast.makeText( this, "not yet implemented", Toast.LENGTH_SHORT ).show();
 				return true;
 			default:
 				return super.onOptionsItemSelected( item );

@@ -14,6 +14,7 @@ import android.content.Context;
 
 public class ShowList extends BaseScraper<Show>
 {
+	public static final String URL = "https://eztv.it/showlist/";
 	
 	public ShowList(Context context) {
 		super(context);
