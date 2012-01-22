@@ -41,7 +41,11 @@ public class Show implements Parcelable
 		this.title = in.readString();
 		this.status = in.readString();
 
+
+		int size = in.readInt();
 		this.episodes = new LinkedList<Episode>();
+		for( int i = 0; i < size; i++ )
+			this.episodes.add( (Episode)in.readParcelable( Episode.class.getClassLoader() ) );
 	}
 
 	@Override
@@ -61,6 +65,10 @@ public class Show implements Parcelable
 		dest.writeString( this.url );
 		dest.writeString( this.title );
 		dest.writeString( this.status );
+
+		dest.writeInt( this.episodes.size() );
+		for( Episode e : this.episodes )
+			dest.writeParcelable( e, 0 );
 	}
 
 	public void addEpisode( Episode e )

@@ -1,11 +1,6 @@
 package it.koen.eztv;
 
 import it.koen.eztv.net.LoginTask;
-
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -86,22 +81,4 @@ public class LoginActivity extends Activity
 			}
 		}.execute( username, password );
 	}
-
-	public static String md5( String data )
-	{
-		try
-		{
-			byte[] bytes = data.getBytes();
-			MessageDigest md;
-			md = MessageDigest.getInstance( "MD5" );
-			byte[] digest = md.digest( bytes );
-			BigInteger hash = new BigInteger( 1, digest );
-			return hash.toString(16);
-
-		} catch( NoSuchAlgorithmException ball )
-		{
-			throw new RuntimeException( ball );
-		}
-	}
-
 }

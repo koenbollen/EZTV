@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="background_text">#9999CC</color>
+	<color name="background_gray">#555555</color>
 	<color name="error">#ee0033</color>
+	
+	<color name="list_solid_border">#ffb4c6ff</color>
+	<color name="list_solid_gradient">#ff095b8f</color>
+	    
 </resources>

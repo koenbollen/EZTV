@@ -57,7 +57,7 @@ public class MyShows extends BaseScraper<Show>
 				String u = tds.get(1).child( 0 ).attr( "href" );
 				String n = tds.get(1).text();
 				String r = tds.get(3).text();
-				Episode e = new Episode( s, n, r, u, w );
+				Episode e = new Episode( n, r, u, w );
 				for( Element a : tds.get(2).getElementsByTag( "a" ) )
 					e.addDownload( a.attr("href") );
 						

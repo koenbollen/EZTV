@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp" 
+    >
 
     <ImageView
         android:id="@+id/watched"
+        android:padding="3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_view" />
+        android:layout_centerVertical="true"
+        android:src="@drawable/watched" />
 
     <TextView
         android:id="@+id/episode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/watched"
+        android:gravity="center_vertical"
+        android:layout_alignTop="@+id/watched"
+        android:layout_alignBottom="@+id/watched"
+        android:layout_toLeftOf="@+id/download"
         android:layout_toRightOf="@+id/watched" />
 
     <TextView
         android:id="@+id/released"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/episode"
-        android:layout_toRightOf="@+id/episode"
-        android:visibility="gone" />
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/download"
+        android:textColor="@color/background_gray" />
 
     <ImageView
         android:id="@+id/download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_menu_save" />
+        android:layout_centerVertical="true"
+        android:src="@drawable/download" />
 
 </RelativeLayout>
